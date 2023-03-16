@@ -1,0 +1,659 @@
+SEE SOCKFD: 3
+[my_bind] start
+[my_listen] start
+[my_accept] start
+[my_accept] kill R
+[my_accept] kill S
+[my_send] appended to Send_Messages:1I'm up!
+[__send_handler] clifd: 4
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[__send_handler] calling __format_send: 1I'm up!
+[__recv_handler] clifd: 4
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[__send_handler] calling __format_send: 1I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[__send_handler] calling __format_send: 3I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:3I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[__send_handler] calling __format_send: 3I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 4I'm up! sent
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[__send_handler] calling __format_send: 4I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:3I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 1I'm up! sent
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:1I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 3I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 1I'm up! sent
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 4I'm up! sent
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 1I'm up! sent
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 2I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 1I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] the send buf is full
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 4I'm up! sent
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 3I'm up! sent
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[my_send] recvd a signal!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] the send buf is full
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[my_send] recvd a signal!
+[my_send] appended to Send_Messages:4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[my_send] appended to Send_Messages:1I'm up!
+[my_send] appended to Send_Messages:2I'm up!
+[my_send] appended to Send_Messages:3I'm up!
+[my_send] appended to Send_Messages:4I'm up!
+[my_close] start
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[__send_handler] calling __format_send: 1I'm up!
+[__send_handler] done with __format_send: 1I'm up! sent
+[__send_handler] calling __format_send: 4I'm up!
+[__send_handler] done with __format_send: 4I'm up! sent
+[__send_handler] calling __format_send: 3I'm up!
+[__send_handler] done with __format_send: 3I'm up! sent
+[__send_handler] calling __format_send: 2I'm up!
+[__send_handler] done with __format_send: 2I'm up! sent
+[my_close] done closing/not sock_fd
+returning :)
+[my_close] start
+[my_close] starting cancelling
+[my_close] S cancelled
+[my_close] R cancelled
+[my_close] done closing/not sock_fd
+returning :)

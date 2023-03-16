@@ -1,0 +1,318 @@
+[my_connect] start
+[__send_handler] clifd: 3
+[__recv_handler] clifd: 3
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[__recv_handler] msg recvd: |3I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |2I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |1I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |4I'm up!|!
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[__format_recv] size recvd, recving the msg now: 9
+[__recv_handler] msg recvd: |3I'm up!|!
+[__recv_handler] msg weritten to the table
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 1I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!

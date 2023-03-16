@@ -1,0 +1,12 @@
+Datastructures:
+1> mysocket.h
+2> mysocket.c
+
+Turtorial:
+1> my_socket
+    R: Expects a blocking recv call, will not timeout
+2> my_bind
+3> my_listen
+4> my_connect
+5> my_send
+6> my_recv
