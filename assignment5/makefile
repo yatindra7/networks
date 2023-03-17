@@ -2,8 +2,8 @@ CC=gcc
 AR=ar
 LIB=libmsocket.a
 LINKER_OPTS=-Wl,-rpath=.
-FLAGS=-Wall $(LINKER_OPTS)
-LIBMYSOCK_FLAGS=-cs
+FLAGS=-Wall $(LINKER_OPTS) -pthread
+LIBMYSOCK_FLAGS=-rcs
 MYSOCK_FLAGS=-Wall -c -lpthread -fPIC
 
 build:
@@ -22,3 +22,6 @@ $(LIB): mysocket.o
 
 mysocket.o: mysocket.c mysocket.h
 	$(CC) $(MYSOCK_FLAGS) $^
+
+clean: 
+	rm *.a *.o
