@@ -10,3 +10,29 @@ Turtorial:
 4> my_connect
 5> my_send
 6> my_recv
+
+
+    -`my_close`
+        -void my_close(int sockfd);
+        -
+    -`my_send`
+        -int my_send(int sockfd, const void *buf, size_t len, int flags);
+        -
+    -`my_recv`
+        -int my_recv(int sockfd, void *buf, size_t len, int flags);
+        -
+    -`my_connect`
+        -int my_connect(int sockfd, struct sockaddr *addr, socklen_t addrlen);
+        -
+    -`my_accept`
+        -int my_accept(int sockfd, struct sockaddr *cliaddr, socklen_t *clilen);
+        -
+    -`my_listen`
+        -int my_listen(int sockfd, int backlog);
+        -
+    -`my_bind`
+        -int my_bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
+        -
+    -`my_socket`
+        -int my_socket(int domain, int type, int protocol);
+        -
