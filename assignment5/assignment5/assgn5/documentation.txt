@@ -1,0 +1,72 @@
+# Data-structures
+`message`
+    - typedef struct _message {
+        char content[MSG_LEN];
+        int msg_len;
+        int flags;
+        } message;
+
+`Received_Message`
+    - message Received_Message[LIMIT_LEN];
+    - basically an array of messages
+
+`Sent_Messages`
+    - message Sent_Messages[LIMIT_LEN];
+    - basically an array of messages
+
+# Function structure/traceback graph
+                        -----(S)--->`__send_handler`---> `__format_send`--->`__persistent_send` OR `__chunk_send`--->`__persistent_send`
+                        |
+`my_send`/`my_recv`-----|
+                        |----(R)--->`__recv_handler`---> `__format_recv`--->`__persistent_recv` OR `__chunk_recv`--->`__persistent_recv`
+
+# Function signatures
+    - `my_*`: same as provided
+    - `__send_handler`
+        - void *__send_handler(void *);
+        - The S-thread execution starting point
+        - interfaces with `my_send`
+    -`__recv_handler`
+        - void *__recv_handler(void *);
+        - The R-thread execution starting point
+        - interfaces with `my_revc`
+    -`__chunk_send`
+        - int __chunk_send(int sockfd, void *buf, size_t len, int flags);
+        - breaks message into chunks of atmost 
+          `_CHUNK_SIZE` and calls `__persistent_send`
+    -`__chunk_recv`
+        - int __chunk_recv(int sockfd, void *buf, size_t len, int flags);
+        - breaks message into chunks of atmost 
+          `_CHUNK_SIZE` and calls `__persistent_recv`
+    -`__persistent_send`
+        - int __persistent_send(int sockfd, void *msg, size_t len, int *send_ret, int flags);
+        - reapeatedly calls `send` till `len` bytes sent
+    -`__persistent_recv`
+        - int __persistent_recv(int sockfd, void *buf, size_t len, int *recv_ret, int flags);
+        - reapeatedly calls `recv` till `len` bytes recv
+
+# What happens when you call `my_recv`
+    1. `my_recv` locks `recv_bufffer_lock` (The lock over `Received_Message`), 'OR' blocks if unable.
+    2. Then checks `__recv_cnt` (zero or not), if zero (i.e. no entry in Received_Message),
+        `my_recv` will `pthread_cond_wait` in a loop, till there are entries.
+    3. `my_recv` then copies appropriate length of the message into `buf` (least between message-size
+        and `len`) and returns the number of bytes written. Decrements `__recv_cnt`, effectively
+        removing the message from `Received_Message`.
+    4. `my_recv` then unlocks the mutex `recv_bufffer_lock`, followed by signalling the `__recv_handler`
+        which  might be `pthread_cond_wait`ing if the buffer was full.
+    5. Meanwhile for the `__recv_handler` the following situations might be there:
+        - Case 1> the handler is currently blocked on `read` (with `MSG_PEEP`), waiting for a recv.
+        - Case 2> the handler has performed the `recv` but is currently blocked due to inssuficied space
+                    in the `Received_Message` buffer, and hence `pthread_cond_wait`s for `my_recv`'s signal.
+        - Case 3> it has already `recvd`, and appended to the `Received_Message` buffer.
+
+# What happens when you call `my_send`
+    1. `my_send` checks if there is space in the `Sent_Messages` queue (via `__send_cnt`), `pthread_cond_wait`
+        if no space available, to be woken up by the `__send_handler` function's `pthread_cond_broadcast`
+        [NOTE] The lock-unlock sequence is same as above.
+    2. `my_send` appends to the table (increments `__send_cnt` etc), inside the lock, and returns `len`
+    3. Meanwhile for the `__send_handler` the following situations might be there:
+        - Case 1> the handler is blocked at the `send_buffer_cv` lock. The thread tries to acquire the
+                    lock from the very start.
+        - Case 2> blocked as the `Sent_Messages` buffer is empty, it starts `pthread_cond_wait`ing.
+        - Case 3> neither of the above, but the `__format_send` is happening

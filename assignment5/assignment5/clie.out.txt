@@ -1,0 +1,1545 @@
+[my_connect] start
+[__recv_handler] clifd: 3
+[__send_handler] clifd: 3
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: start000000000000000000000000000000000000000000000
+[my_send] appended to Send_Messages: 1I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 1I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 2I'm up!
+[my_send] appended to Send_Messages: 2I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 2I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 3I'm up!
+[my_send] appended to Send_Messages: 3I gotchaaa!
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 3I gotchaaa!
+[__format_recv] size recvd, recving the msg now: 4628
+[__recv_handler] msg weritten to the table
+[__recv_handler] broadcast sent, going into wait
+[my_recv] I'm up!
+[IN SERVER]buf: 4I'm up!
+[my_send] appended to Send_Messages: 4I gotchaaa!
+[my_close] start
+[my_close] starting cancelling
+[__send_handler] calling __format_send
+[__send_handler] done with __format_send: 4I gotchaaa!
+[my_close] S cancelled
+[my_close] R cancelled
+[my_close] done closing/not sock_fd
+returning :)
