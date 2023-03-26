@@ -22,6 +22,7 @@
 #define MAX_TRIES 5 // Maximum number of times to send a packet
 #define MAX_WAIT_MS 5000 // Maximum wait time (in milliseconds) for response to arrive
 #define DELAY_MS 1000 // Delay between packets (in milliseconds)
+#define BITS_PER_BYTE 8
 
 // ICMP packet types
 #define ICMP_ECHO_REQUEST 8
@@ -41,11 +42,11 @@ typedef struct {
 // Function prototypes
 
 static int GetSocket(void);
-static uint16_t Checksum(void* buf, int len);
+static uint16_t Checksum(void* buf, int len); // tested
 static void ReverseDNSLookup(const char* ip_address, char* host_name, int host_name_size);
 static int SendICMPPacket(int socket_fd, const char* dest_address, int ttl, int sequence_number, int packet_size);
-static double EstimateLatency(const struct timeval* send_time, const struct timeval* recv_time);
-static double EstimateBandwidth(int packet_size, double latency);
+static double EstimateLatency(const struct timeval* send_time, const struct timeval* recv_time); // tested
+static double EstimateBandwidth(int* packet_sizes, double* latencies, int num_packets); // not sure about the formula
 static void PrintPacketDetails(const char* address, const struct sockaddr_in* from, int packet_size, int ttl, double latency, double bandwidth);
 static void PrintIPHeader(struct iphdr* ip_header);
 static void PrintTCPHeader(char* tcp_data);
@@ -211,13 +212,33 @@ void test_estimated_latency(){
 }
 
 
+// not so sure about this one
 /**
 * Given the packet size and the latency, estimates the bandwidth in bits per second.
-* @param packet_size: int - size of the ICMP packet in bytes
-* @param latency: double - latency in milliseconds
+* @param packet_size: int* - size of the ICMP packet in bytes
+* @param latency: double* - latency in milliseconds
 * @return: double - estimated bandwidth in bits per second
 */
-static double EstimateBandwidth(int packet_size, double latency);
+static double EstimateBandwidth(int* packet_sizes, double* latencies, int num_packets) {
+    int n = num_packets;
+    double total_data = 0;
+    double total_time = 0;
+    for (int i = 0; i < n; i++) {
+        total_data += packet_sizes[i];
+        total_time += latencies[i];
+    }
+    double avg_data = total_data / n;
+    double avg_time = total_time / n;
+    return (avg_data / avg_time) * 8 / 1000000; // Convert to Mbps
+}
+
+void test_estimated_bandwidth(){
+    int packet_sizes[] = {1000, 2000, 500, 1500};
+    double latencies[] = {0.05, 0.1, 0.02, 0.15};
+    int n = sizeof(packet_sizes) / sizeof(packet_sizes[0]);
+    double bandwidth = EstimateBandwidth( packet_sizes, latencies,n);
+    printf("Estimated bandwidth: %.2f Mbps\n", bandwidth);
+}
 
 /**
 * Prints the details of the received ICMP packet.
@@ -281,5 +302,6 @@ NodeInfo* PingNetInfo(const char* address, int* node_count);
 int main(){
     test_checksum();
     test_estimated_latency();
+    test_estimated_bandwidth();
     return 0;
 }
