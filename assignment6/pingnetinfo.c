@@ -41,7 +41,7 @@ typedef struct {
 // Function prototypes
 
 static int GetSocket(void);
-static uint16_t Checksum(void* buf, int len);
+static uint16_t Checksum(void* buf, int len); // tested
 static void ReverseDNSLookup(const char* ip_address, char* host_name, int host_name_size);
 static int SendICMPPacket(int socket_fd, const char* dest_address, int ttl, int sequence_number, int packet_size);
 static double EstimateLatency(const struct timeval* send_time, const struct timeval* recv_time);
@@ -75,24 +75,27 @@ static int GetSocket(void){
  * @return       The 16-bit Internet Checksum of the given data.
  */
 static uint16_t Checksum(void* buf, int len){
+    uint16_t* buffer = buf;
+    uint32_t sum = 0;
+    uint16_t result;
 
-    int* buffer = (int*)buf;
-    int sum = 0;
-    int result;
+    // Calculate the sum of all 16-bit words
+    for (int i = 0; i < (len / 2); i++) {
+        sum += ntohs(buffer[i]); // Add the 16-bit word to the sum
+    }
 
-    // uint16_t* buffer = (uint16_t*)buf;
-    // uint32_t sum = 0;
-    // uint16_t result;
+    // If the length is odd, add the last byte to the sum
+    if (len % 2 == 1) {
+        sum += ((uint8_t*)buf)[len - 1];
+    }
 
-    for (sum = 0; len > 1; len -= 2)
-        sum += *buffer++;
-
-    if (len == 1)
-        sum += *(uint8_t*)buffer;
-
+    // Add the carry to the sum
     sum = (sum >> 16) + (sum & 0xFFFF);
     sum += (sum >> 16);
-    result = ~sum;
+
+    // Take the one's complement of the sum
+    result = (uint16_t)(~sum);
+
     return result;
 }
 
