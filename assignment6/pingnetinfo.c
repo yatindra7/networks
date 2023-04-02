@@ -239,11 +239,6 @@ int main(int argc, char *argv[]){
         printf("[DNS resolution] %s resolved to %s\n",trace_dest,inet_ntoa(dest_addr.sin_addr));
     }
 
-    
-    // create socket to send tcp messages
-    int sendSocket = socket(PF_INET, SOCK_STREAM, 0);
-    if (sendSocket < 0){perror("Error creating tcp socket");exit(-1);}
-
     // create socket to receive icmp messages
     int recvSocket = socket(PF_INET, SOCK_RAW, IPPROTO_ICMP);
     if (recvSocket < 0){perror("Error creating icmp socket");exit(-1);}
@@ -258,6 +253,11 @@ int main(int argc, char *argv[]){
     int i = 0;
     while (i < MAX_TTL)
     {
+            
+        // create socket to send tcp messages
+        int sendSocket = socket(PF_INET, SOCK_STREAM, 0);
+        if (sendSocket < 0){perror("Error creating tcp socket");exit(-1);}
+
         i++;
 
         // set TTL in IP header
@@ -326,6 +326,8 @@ int main(int argc, char *argv[]){
             printf("Unknown error: %d sending packet\n", errno);
             exit(-1);
         }
+
+        close(sendSocket);
     }
     printf("Unable to reach host within TTL of %d\n", MAX_TTL); 
     printf("--------------- PingNetInfo terminated ---------------\n");
@@ -333,5 +335,7 @@ int main(int argc, char *argv[]){
     test_checksum();
     test_estimated_latency();
     test_estimated_bandwidth();
+
+    close(recvSocket);
     return 0;
 }
