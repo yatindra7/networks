@@ -1,220 +1,265 @@
-#include <arpa/inet.h>
-#include <ctype.h>
-#include <errno.h>
-#include <netdb.h>
-#include <netinet/ip.h>
-#include <netinet/ip_icmp.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/socket.h>
-#include <sys/time.h>
-#include <sys/types.h>
-#include <time.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <stdint.h>
 
-#include <ifaddrs.h>
-#include <netinet/tcp.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <arpa/inet.h>
+# include <sys/types.h>
+# include <netinet/in.h>
+# include <sys/socket.h>
+# include <unistd.h>
+# include <pthread.h>
+# include <poll.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <sys/types.h>
+# include <sys/ipc.h>
+# include <fcntl.h>
+# include <sys/stat.h>
+# include <signal.h>
+# include <sys/sem.h>
+# include <sys/select.h>
+# include <sys/un.h>
+# include <netinet/ip.h>
+# include <netinet/ip_icmp.h>
+# include <sys/types.h>
+# include <sys/socket.h>
+# include <netdb.h>
+# include <sys/time.h>
 
-#define MAX_TTL 30         // sanity
-#define SOCKET_TIMEOUT 10  // in seconds
-#define RECV_BUF_LEN 10000
-#define PORT 20000
-// Structure to hold information about a network node
-typedef struct {
-    char ip_address[16]; // IP address (in dotted decimal notation)
-    char host_name[256]; // Host name (if available)
-    uint16_t sequence_number; // Sequence number for current packet
-    double latency; // Estimated latency (in microseconds)
-    double bandwidth; // Estimated bandwidth (in Mbps)
-} NodeInfo;
+# define SA (struct sockaddr*)
+# define RECV_TIMEOUT 1
+# define STR10 "ownwegvgrh"
+# define STR20 "cgmpaubupiashvvixwuk"
+# define STR30 "ixwmupxylgbpicnmsijzapvmhcskgw"
+# define STR40 "mrppgfxtnenqqkrozlumbgzrlenjwqrkjgzqnylb"
 
+typedef struct s_traceroute
+{
+	char *buffer; // stores the message (with all the headers)
+	char buff[4146]; // 
+    // char *buff;
+	socklen_t len; // clilen
+	struct sockaddr_in	addr; // stores ip address of final destination (one we get after ip lookup)
+	struct sockaddr_in	addr2;
+	struct icmphdr *icmphd2; // stores the header of message which is recieved
+	char *sbuff; // stores the output of create mssg
+	char *ip; // stores ip address of final destination
+	int	hop; // stores the current hop number
+	int	sockfd; // sockfd or raw socket
+	struct timeval tv_out; // stores the timeout value
+	struct timeval start; // stores the starting time
+	struct timeval end; // stores the time when mssg was recved
+	double total; 
+	int	i; // ith probe
+} t_traceroute;
 
-// Function prototypes
+char *dns_lookup(char *addr_host, struct sockaddr_in *addr_con);
+unsigned short checksum(char *buffer, int nwords);
+void exit_err(char *s);
+int	per_hop(t_traceroute *p, int num_probes,int T);
+void print_results(int type, t_traceroute *p, int n, int num_probes);
+void *create_msg(int hop, char *ip, char *buff,int data_len);
 
-static uint16_t Checksum(void* buf, int len); // tested
-struct sockaddr_in* getSrcAddr(); // tested
-struct in_addr * DNS_lookup(char* URL); // tested
-static double EstimateLatency(const struct timeval* send_time, const struct timeval* recv_time); // tested
-static double EstimateBandwidth(int* packet_sizes, double* latencies, int num_packets); // not sure about the formula
-NodeInfo* PingNetInfo(const char* address, int* node_count);
-
-
-/**
- * Calculates the Internet Checksum of a given buffer of data.
- *
- * @param buffer The buffer of data for which the Internet Checksum is to be
- *               calculated.
- * @param len   The size of the buffer of data.
- * @return       The 16-bit Internet Checksum of the given data.
- */
-static uint16_t Checksum(void* buf, int len) {
-    uint16_t* buffer = buf;
-    uint32_t sum = 0;
-    uint16_t result;
-
-    // int* buffer = buf;
-    // int sum = 0;
-    // int result;
-
-    // Calculate the sum of all 16-bit words
-    for (int i = 0; i < (len / 2); i++) {
-        sum += ntohs(buffer[i]); // Add the 16-bit word to the sum
-    }
-
-    // If the length is odd, add the last byte to the sum
-    if (len % 2 == 1) {
-        sum += ((uint8_t*)buf)[len - 1];
-    }
-
-    // Add the carry to the sum
-    sum = (sum >> 16) + (sum & 0xFFFF);
-    sum += (sum >> 16);
-
-    // Take the one's complement of the sum
-    result = (uint16_t)(~sum);
-
-    return result;
+void exit_err(char *s)
+{
+	printf("%s", s);
+	exit(1);
 }
 
-void test_checksum(){
-     uint16_t buf[] = {0x4500, 0x003c, 0x1a2b, 0x0000, 0x8001, 0xb227, 0x0a00, 0x0001, 0x0a00, 0x0002};
-    int len = sizeof(buf);
-    uint16_t checksum = Checksum(buf, len);
-    printf("Checksum: 0x%04x\n", checksum);
+char *dns_lookup(char *addr_host, struct sockaddr_in *addr_con)
+{
+	struct addrinfo	hints;
+	struct addrinfo	*res;
+	struct sockaddr_in *sa_in;
+	char *ip;
+
+	memset(&(hints), 0, sizeof(hints));
+	hints.ai_family = AF_INET;
+	ip = malloc(INET_ADDRSTRLEN);
+	if (getaddrinfo(addr_host, NULL, &hints, &(res)) < 0)
+		exit_err("ft_traceroute: unknown host\n");
+	sa_in = (struct sockaddr_in *)res->ai_addr;
+	inet_ntop(res->ai_family, &(sa_in->sin_addr), ip, INET_ADDRSTRLEN);
+	(*addr_con) = *sa_in;
+	(*addr_con).sin_port = htons(1);
+	return (ip);
 }
 
+unsigned short checksum(char *buffer, int nwords)
+{
+	unsigned short *buf;
+	unsigned long sum;
 
-/**
- * Finds IP address of current interface
- *
- * @return  src_addr
- */
-struct sockaddr_in* getSrcAddr() {
-    struct ifaddrs *id, *id_tmp;
-    struct sockaddr_in *src_addr = NULL;
-    int getAddress = getifaddrs(&id);
-    if (getAddress == -1)
-    {
-        perror("Unable to retrieve IP address of interface");
-        exit(-1);
+	buf = (unsigned short *)buffer;
+	sum = 0;
+	while (nwords > 0)
+	{
+		sum += *buf++;
+		nwords--;
+	}
+	sum = (sum >> 16) + (sum & 0xffff);
+	sum += (sum >> 16);
+	return (~sum);
+}
+
+int per_hop(t_traceroute *p, int num_probes, int T)
+{
+    // initialise 2 arrays to store time difference and length of different messages sent 
+    // length of message = 0, 10, 20, 30, 40 -- (i*10) %50 
+
+    int * mssg_size;
+    mssg_size = (int*)malloc(sizeof(int)*num_probes);
+    double * total_time;
+    total_time = (double *) malloc(sizeof(double) * num_probes);
+    // initialise both of them
+    for(int idx = 0; idx < num_probes; idx++){
+        mssg_size[idx] = (idx%5)*10;
     }
+    for (int idx = 0; idx < num_probes; idx++) {
+        total_time[idx] = -1.0;
+    }
+	while (++(p->i) < num_probes) // number of probes done
+	{
+		p->sbuff = create_msg(p->hop, p->ip, p->buffer,mssg_size[p->i]); // sbuf stores the buffer
+		gettimeofday(&p->start, NULL); // stores sending time at start
+		int num;
+        num = sendto(p->sockfd, p->sbuff, sizeof(struct ip) + sizeof(struct icmphdr) + mssg_size[p->i], 0, SA & p->addr, sizeof(p->addr));
+		if (!(recvfrom(p->sockfd, p->buff, sizeof(p->buff), 0, SA & p->addr2, &p->len) <= 0))
+		{
+			gettimeofday(&p->end, NULL); // store end time at last
+            // calculate the time difference
+			p->total = (double)((p->end.tv_usec - p->start.tv_usec) / 1000.0);
+            total_time[p->i] = (double)((p->end.tv_usec - p->start.tv_usec) / 1000.0);
+            // stores the icmphdr of the packet we recieved
+			p->icmphd2 = (struct icmphdr *)(p->buff + sizeof(struct ip));
 
-    id_tmp = id;
-    while (id_tmp) 
-    {
-        if ((id_tmp->ifa_addr) && (id_tmp->ifa_addr->sa_family == AF_INET))
-        {
-            src_addr = (struct sockaddr_in *) id_tmp->ifa_addr;
-            break;
+			if ((p->icmphd2->type != 0))
+				print_results(1, p, p->i,num_probes); // print delay
+			else
+			{
+                // printf("here ");
+				print_results(1, p, p->i,num_probes);
+				if (p->i == num_probes-1) // condition to stop the hops, reached final dest/ not an icmp echo
+                   return (1);
+			}
+		}
+		else{
+            // printf("type == %d", p->icmphd2->type);
+			print_results(2, p, p->i,num_probes); // print * // time over
+            if (p->i == num_probes-1 && p->icmphd2->type == 0) // condition to stop the hops, reached final dest/ not an icmp echo
+                return (1);
         }
-        id_tmp = id_tmp->ifa_next;
-    }
-
-    if (src_addr == NULL) {
-        perror("Unable to find IP address of interface");
-        exit(-1);
-    }
-
-    return src_addr;
-}
-
-/**
- * Finds out IP address of the given URL
- *
- * @param URL  -- URL (destination to be traced)
- * @return  IP address of the given URL
- */
-struct in_addr * DNS_lookup(char* URL){
-    struct hostent *host;
-        host = gethostbyname(URL);
-        if (host == NULL)
-        {
-            perror("Invalid host or failed DNS resolution");
-            exit(-1);
-        }
-    return (struct in_addr *)host->h_addr;
-}
-
-/**
-* Given the send and receive times of an ICMP packet, calculates the latency in milliseconds.
-* @param send_time: const struct timeval* - pointer to the timeval struct representing the send time
-* @param recv_time: const struct timeval* - pointer to the timeval struct representing the receive time
-* @return double - latency in milliseconds
-*/
-static double EstimateLatency(const struct timeval* send_time, const struct timeval* recv_time) {
-    double latency = ((double) (recv_time->tv_sec - send_time->tv_sec)) + ((double) (recv_time->tv_usec - send_time->tv_usec)) / 1000000.0;
-    return latency;
-}
-
-void test_estimated_latency(){
-    
-    // Set up test values
-    struct timeval send_time = { .tv_sec = 1, .tv_usec = 500000 };
-    struct timeval recv_time = { .tv_sec = 2, .tv_usec = 0 };
-
-    // Calculate latency
-    double latency = EstimateLatency(&send_time, &recv_time);
-
-    // Print result
-    printf("Latency: %f seconds\n", latency);
+        sleep(T);
+	}
+    free(total_time);
+    free(mssg_size);
+	return (0);
 }
 
 
-// not so sure about this one
-/**
-* Given the packet size and the latency, estimates the bandwidth in bits per second.
-* @param packet_size: int* - size of the ICMP packet in bytes
-* @param latency: double* - latency in milliseconds
-* @return: double - estimated bandwidth in bits per second
-*/
-static double EstimateBandwidth(int* packet_sizes, double* latencies, int num_packets) {
-    int n = num_packets;
-    double total_data = 0;
-    double total_time = 0;
-    for (int i = 0; i < n; i++) {
-        total_data += packet_sizes[i];
-        total_time += latencies[i];
-    }
-    double avg_data = total_data / n;
-    double avg_time = total_time / n;
-    return (avg_data / avg_time) * 8 / 1000000; // Convert to Mbps
+void *create_msg(int hop, char *ip, char *buff,int data_len)
+{
+	struct ip *ip_hdr;
+	struct icmphdr *icmphd;
+
+	ip_hdr = (struct ip *)buff;
+	ip_hdr->ip_hl = 5; // header length
+	ip_hdr->ip_v = 4; // version
+	ip_hdr->ip_tos = 0; // type of service
+	ip_hdr->ip_len = sizeof(struct ip) + sizeof(struct icmphdr) + data_len; // @add change this
+	ip_hdr->ip_id = 10000; // id
+	ip_hdr->ip_off = 0;
+	ip_hdr->ip_ttl = hop; // ttl
+	ip_hdr->ip_p = IPPROTO_ICMP; // protocol
+	inet_pton(AF_INET, ip, &(ip_hdr->ip_dst)); // destination ip addrress
+	ip_hdr->ip_sum = checksum(buff, 9); // checksum
+	icmphd = (struct icmphdr *)(buff + sizeof(struct ip)); // creates icmp header
+	icmphd->type = ICMP_ECHO; // sets type to icmp echo
+	icmphd->code = 0; // sets code to zero
+	icmphd->checksum = 0; // 
+	icmphd->un.echo.id = 0; // identifier = 0
+	icmphd->un.echo.sequence = hop + 1; // sequence number = current hop + 1
+	icmphd->checksum = checksum((buff + 20), 4); //checksum of icmp header
+    switch(data_len) {
+    case 10:
+        memcpy(buff + sizeof(struct ip) + sizeof(struct icmphdr), STR10, data_len);
+        break;
+    case 20:
+        memcpy(buff + sizeof(struct ip) + sizeof(struct icmphdr), STR20, data_len);
+        break;
+    case 30:
+        memcpy(buff + sizeof(struct ip) + sizeof(struct icmphdr), STR30, data_len);
+        break;
+    case 40:
+        memcpy(buff + sizeof(struct ip) + sizeof(struct icmphdr), STR40, data_len);
+        break;
+    // more case statements can be added here
+    default:
+        // code to be executed if none of the above cases match
+        break;
+}
+	return (buff);
 }
 
-void test_estimated_bandwidth(){
-    int packet_sizes[] = {1000, 2000, 500, 1500};
-    double latencies[] = {0.05, 0.1, 0.02, 0.15};
-    int n = sizeof(packet_sizes) / sizeof(packet_sizes[0]);
-    double bandwidth = EstimateBandwidth( packet_sizes, latencies,n);
-    printf("Estimated bandwidth: %.2f Mbps\n", bandwidth);
+void init_trace(t_traceroute *trace)
+{
+	int	one;
+	int	*val;
+
+	one = 1;
+	val = &one; 
+	trace->hop = 1; // first hop
+	trace->tv_out.tv_sec = RECV_TIMEOUT; // set timeout
+	trace->tv_out.tv_usec = 0; // microsec of timeout = 0
+	trace->len = sizeof(struct sockaddr_in); // length of sockaddr_in 
+	trace->buffer = malloc(4146); // have to change i think @add
+	trace->sockfd = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP); // creates a socket
+	if (setsockopt(trace->sockfd, IPPROTO_IP, IP_HDRINCL, val, sizeof(one)) < 0) // tells kernel to use user given ip packet and not add it's own
+		exit_err("error setsockopt\n");
+	setsockopt(trace->sockfd, SOL_SOCKET, SO_RCVTIMEO, (const char *)&trace->tv_out, sizeof(trace->tv_out)); // sets timeout value
 }
 
+void print_results(int type, t_traceroute *p, int n, int num_probes)
+{
+	struct ip *ip;
+	// struct hostent *c;
+	char *ipa;
 
-/**
- * Performs a traceroute to the specified address, estimates the latency and bandwidth of each
- * link in the path, and returns the information for each node in the path.
- *
- * @param address The IP address or hostname of the target.
- * @param node_count A pointer to an integer that will store the number of nodes in the path.
- * @return An array of NodeInfo structures, containing information about each node in the path.
- *         The number of elements in the array is stored in the integer pointed to by node_count.
- */
-NodeInfo* PingNetInfo(const char* address, int* node_count);
+	ipa = inet_ntoa(p->addr2.sin_addr);
+	// ip = (struct ip *)p->buff;
+	// c = gethostbyaddr((void*)&(ip->ip_src.s_addr), sizeof(ip->ip_src.s_addr), AF_INET);
+	if (type == 1)
+	{
+		if (n == 0)
+		{
+			printf("%2d  %15s %.3f ms ", p->hop,ipa, p->total);
+		}
+		else
+			printf("%.3f ms%c", p->total, (n == num_probes-1) ? '\n' : ' ');
+	}
+	else
+	{
+		if (n == 0)
+			printf("%2d      * ", p->hop);
+		else
+			printf("      *%c", (n == num_probes-1) ? '\n' : ' ');
+	}
+}
 
-/**
- * Main function of the program. It takes a site address as input and finds
- * the route and estimates the latency and bandwidth of each link in the path.
- * It uses a combination of ICMP Echo and ICMP Time Exceeded packets to achieve
- * this. The route discovery and estimation of link latency/bandwidth is done
- * using the Traceroute and Ping algorithms.
- *
- * @return     An integer indicating the exit status of the program.
- */
+void ft_traceroute(t_traceroute *p, int num_probes, int T)
+{
+	while ((!(p->hop == 31))) // sets the max hop value to 30
+	{
+		p->i = -1; // set i to -1 , keeps count of how many packets have been sent till now
+		if (per_hop(p,num_probes,T)) // do perhop, when it returns +1 it means it has reached the final destination
+			break ;
+		p->hop++; // increase the value of ttl
+	}
+}
 
-int main(int argc, char *argv[]){
-
+int	main(int argc, char *argv[])
+{
     if (argc < 4)
     {
         printf("incomplete arguments\n ");
@@ -224,118 +269,24 @@ int main(int argc, char *argv[]){
     char *trace_dest = argv[1]; //  a site to probe (can be either a name like cse.iitkgp.ac.in or an IP address like 10.3.45.6)
     int num_probes = atoi(argv[2]); // the number of times a probe will be sent per link
     int T = atoi(argv[3]); // time difference between any two probes
-
-    struct sockaddr_in *src_addr = getSrcAddr();
-    printf("PingNetInfo from host: %s\n", inet_ntoa(src_addr->sin_addr));
-
-    struct sockaddr_in dest_addr; 
-    dest_addr.sin_family = AF_INET;
-    dest_addr.sin_port = htons(PORT);
-
-    int is_ip_addr = inet_aton(trace_dest, &(dest_addr.sin_addr)); // returns zero if trace dest is invalid
-    if (!is_ip_addr)
-    {
-        dest_addr.sin_addr = *((struct in_addr *)DNS_lookup(trace_dest));
-        printf("[DNS resolution] %s resolved to %s\n",trace_dest,inet_ntoa(dest_addr.sin_addr));
+    if(T < 1){
+        printf("T should be >= 1");
+        exit(-1);
     }
-
-    // create socket to receive icmp messages
-    int recvSocket = socket(PF_INET, SOCK_RAW, IPPROTO_ICMP);
-    if (recvSocket < 0){perror("Error creating icmp socket");exit(-1);}
-
-    char recvBuffer[RECV_BUF_LEN];
-    struct sockaddr_in cli_addr;
-    socklen_t cli_len = sizeof(struct sockaddr_in);
-    long numBytesReceived;
-
-    printf("--------------- PingNetInfo results ---------------\n");
-    printf("0: %s [start]\n", inet_ntoa(src_addr->sin_addr));
-    int i = 0;
-    while (i < MAX_TTL)
-    {
-            
-        // create socket to send tcp messages
-        int sendSocket = socket(PF_INET, SOCK_STREAM, 0);
-        if (sendSocket < 0){perror("Error creating tcp socket");exit(-1);}
-
-        i++;
-
-        // set TTL in IP header
-        setsockopt(sendSocket, IPPROTO_IP, IP_TTL, &i, sizeof(i));
-
-        errno = 0;
-        connect(sendSocket, (struct sockaddr *)&dest_addr, sizeof(struct sockaddr));
-
-        int icmpErrorReceived = 0;
-
-        // TTL expired
-        if (errno == EHOSTUNREACH)
-        {
-            while (!icmpErrorReceived)
-            {
-                // do in loop
-                numBytesReceived = recvfrom(recvSocket,recvBuffer,RECV_BUF_LEN,0,(struct sockaddr *)&cli_addr,&cli_len);
-
-                // extract IP header
-                struct ip *ip_hdr = (struct ip *)recvBuffer;
-
-                // extract ICMP header
-                int ipHeaderLength = 4 * ip_hdr->ip_hl;
-                struct icmp *icmp_hdr = (struct icmp *)( (char*) ip_hdr + ipHeaderLength );
-
-                int icmpMessageType = icmp_hdr->icmp_type;
-                int icmpMessageCode = icmp_hdr->icmp_code;
-
-                // TTL exceeded
-                if (icmpMessageType == ICMP_TIME_EXCEEDED && icmpMessageCode == ICMP_NET_UNREACH)
-                {
-                    // check if ICMP messages are related to TCP packets
-                    struct ip *inner_ip_hdr = (struct ip *)( (char*) icmp_hdr + ICMP_MINLEN);
-                    if (inner_ip_hdr->ip_p == IPPROTO_TCP)
-                    {icmpErrorReceived = 1;}
-                }
-
-                // port unreachable
-                else if (icmpMessageType == ICMP_DEST_UNREACH && icmpMessageCode == ICMP_PORT_UNREACH)
-                {
-                    printf("%d: %s [complete]\n", i, inet_ntoa(dest_addr.sin_addr));
-                    printf("--------------- PingNetInfo terminated ---------------\n");
-                    exit(0);
-                }
-            }
-            printf("%d: %s\n", i, inet_ntoa(cli_addr.sin_addr));
-
-            // success full so send it 5 tines
-
-            // case: timeout
-        } else if ( errno == ETIMEDOUT      // socket timeout
-                || errno == EINPROGRESS // operation in progress
-                || errno == EALREADY    // consecutive timeouts
-                )
-        {printf("%d: * * * * * [timeout]\n", i);}
-
-        // case: destination reached
-        else if (errno == ECONNRESET || errno == ECONNREFUSED)
-        {
-            printf("%d: %s [complete]\n",i, inet_ntoa(dest_addr.sin_addr));
-            printf("--------------- PingNetInfo terminated ---------------\n");
-            exit(0);
-        }
-        else
-        {
-            printf("Unknown error: %d sending packet\n", errno);
-            exit(-1);
-        }
-
-        close(sendSocket);
+    if(num_probes < 5){
+        printf("Num of probes shld be atlest 5\n");
+        exit(-1);
     }
-    printf("Unable to reach host within TTL of %d\n", MAX_TTL); 
-    printf("--------------- PingNetInfo terminated ---------------\n");
-    return -1;
-    test_checksum();
-    test_estimated_latency();
-    test_estimated_bandwidth();
+	t_traceroute trace; // stores info about the trace
 
-    close(recvSocket);
-    return 0;
+	init_trace(&trace); // initialises values of the trace
+	trace.ip = dns_lookup(trace_dest, &trace.addr); // dns lookup
+	// @add another condition to check if ip is given already
+    if (trace.ip) 
+	{
+		printf("traceroute to %s (%s), 30 hops max\n", trace_dest, trace.ip);
+		ft_traceroute(&trace, num_probes,T); // do traceroute
+		free(trace.buffer); // free memory // need to change
+	}
+	return (0);
 }
