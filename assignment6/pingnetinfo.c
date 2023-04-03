@@ -1,4 +1,3 @@
-
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -51,6 +50,7 @@ typedef struct s_traceroute
 	struct timeval start; // stores the starting time
 	struct timeval end; // stores the time when mssg was recved
 	double total; 
+    double bandwidth;
 	int	i; // ith probe
 } t_traceroute;
 
@@ -60,7 +60,13 @@ void exit_err(char *s);
 int	per_hop(t_traceroute *p, int num_probes,int T);
 void print_results(int type, t_traceroute *p, int n, int num_probes);
 void *create_msg(int hop, char *ip, char *buff,int data_len);
+double calc_bandwidth(int* mssg_size, double* time, int num);
 
+
+double calc_bandwidth(int* mssg_size, double* time, int num){
+    // write func
+    return num;
+}
 void exit_err(char *s)
 {
 	printf("%s", s);
@@ -124,29 +130,38 @@ int per_hop(t_traceroute *p, int num_probes, int T)
 		p->sbuff = create_msg(p->hop, p->ip, p->buffer,mssg_size[p->i]); // sbuf stores the buffer
 		gettimeofday(&p->start, NULL); // stores sending time at start
 		int num;
+        if(p->addr2.sin_addr.s_addr == p->addr.sin_addr.s_addr)
+            sendto(p->sockfd, p->sbuff, sizeof(struct ip) + sizeof(struct icmphdr) , 0, SA & p->addr, sizeof(p->addr));
         num = sendto(p->sockfd, p->sbuff, sizeof(struct ip) + sizeof(struct icmphdr) + mssg_size[p->i], 0, SA & p->addr, sizeof(p->addr));
 		if (!(recvfrom(p->sockfd, p->buff, sizeof(p->buff), 0, SA & p->addr2, &p->len) <= 0))
-		{
+		{   
+            // usleep(10000 * mssg_size[p->i]); // @testing
 			gettimeofday(&p->end, NULL); // store end time at last
             // calculate the time difference
-			p->total = (double)((p->end.tv_usec - p->start.tv_usec) / 1000.0);
-            total_time[p->i] = (double)((p->end.tv_usec - p->start.tv_usec) / 1000.0);
+            double a = (double)((p->end.tv_usec - p->start.tv_usec) / 1000.0);
+            if(a < 0){
+                a += 1000;
+            }
+			p->total = a;
+            total_time[p->i] = a;
+            p->bandwidth = calc_bandwidth(mssg_size,total_time,p->i);
             // stores the icmphdr of the packet we recieved
-			p->icmphd2 = (struct icmphdr *)(p->buff + sizeof(struct ip));
+            p->icmphd2 = (struct icmphdr *)(p->buff + sizeof(struct ip));
 
-			if ((p->icmphd2->type != 0))
-				print_results(1, p, p->i,num_probes); // print delay
-			else
-			{
-                // printf("here ");
-				print_results(1, p, p->i,num_probes);
-				if (p->i == num_probes-1) // condition to stop the hops, reached final dest/ not an icmp echo
+            if ((p->icmphd2->type != 0))
+                {
+                    // printf("type -- %d ",p->icmphd2->type);
+                print_results(1, p, p->i,num_probes); // print delay
+                }
+            else
+            {
+                print_results(1, p, p->i,num_probes);
+                if (p->i == num_probes-1) // condition to stop the hops, reached final dest/ not an icmp echo
                    return (1);
-			}
-		}
-		else{
-            // printf("type == %d", p->icmphd2->type);
-			print_results(2, p, p->i,num_probes); // print * // time over
+            }
+        }
+        else{
+            print_results(2, p, p->i,num_probes); // print * // time over
             if (p->i == num_probes-1 && p->icmphd2->type == 0) // condition to stop the hops, reached final dest/ not an icmp echo
                 return (1);
         }
@@ -167,7 +182,7 @@ void *create_msg(int hop, char *ip, char *buff,int data_len)
 	ip_hdr->ip_hl = 5; // header length
 	ip_hdr->ip_v = 4; // version
 	ip_hdr->ip_tos = 0; // type of service
-	ip_hdr->ip_len = sizeof(struct ip) + sizeof(struct icmphdr) + data_len; // @add change this
+	ip_hdr->ip_len = sizeof(struct ip) + sizeof(struct icmphdr) + data_len; 
 	ip_hdr->ip_id = 10000; // id
 	ip_hdr->ip_off = 0;
 	ip_hdr->ip_ttl = hop; // ttl
@@ -213,8 +228,9 @@ void init_trace(t_traceroute *trace)
 	trace->tv_out.tv_sec = RECV_TIMEOUT; // set timeout
 	trace->tv_out.tv_usec = 0; // microsec of timeout = 0
 	trace->len = sizeof(struct sockaddr_in); // length of sockaddr_in 
-	trace->buffer = malloc(4146); // have to change i think @add
+	trace->buffer = malloc(4146);
 	trace->sockfd = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP); // creates a socket
+    trace->bandwidth = -1;
 	if (setsockopt(trace->sockfd, IPPROTO_IP, IP_HDRINCL, val, sizeof(one)) < 0) // tells kernel to use user given ip packet and not add it's own
 		exit_err("error setsockopt\n");
 	setsockopt(trace->sockfd, SOL_SOCKET, SO_RCVTIMEO, (const char *)&trace->tv_out, sizeof(trace->tv_out)); // sets timeout value
@@ -236,14 +252,20 @@ void print_results(int type, t_traceroute *p, int n, int num_probes)
 			printf("%2d  %15s %.3f ms ", p->hop,ipa, p->total);
 		}
 		else
-			printf("%.3f ms%c", p->total, (n == num_probes-1) ? '\n' : ' ');
+			printf("%.3f ms ", p->total);
+        if(n == num_probes -1){
+            printf("bandwidth -- %.3f \n", p->bandwidth);
+        }
 	}
 	else
 	{
 		if (n == 0)
 			printf("%2d      * ", p->hop);
 		else
-			printf("      *%c", (n == num_probes-1) ? '\n' : ' ');
+			printf("      * ");
+        if(n == num_probes -1){
+            printf("bandwidth\n");
+        }
 	}
 }
 
@@ -281,7 +303,6 @@ int	main(int argc, char *argv[])
 
 	init_trace(&trace); // initialises values of the trace
 	trace.ip = dns_lookup(trace_dest, &trace.addr); // dns lookup
-	// @add another condition to check if ip is given already
     if (trace.ip) 
 	{
 		printf("traceroute to %s (%s), 30 hops max\n", trace_dest, trace.ip);
