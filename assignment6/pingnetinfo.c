@@ -1,4 +1,3 @@
-
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -123,6 +122,40 @@ unsigned short checksum(char *buffer, int len)
 	return (~sum);
 }
 
+int discover_node(tracert *p, int num_probes, int T)
+{
+    for(int i = 0; i < 5; i++){
+		p->sbuff = make_message(p->hop, p->ip, p->buffer,0);
+		int num = sendto(p->sockfd, p->sbuff, sizeof(struct ip) + sizeof(struct icmphdr) , 0, SA & p->addr, sizeof(p->addr));
+		if (!(recvfrom(p->sockfd, p->buff, sizeof(p->buff), 0, SA & p->addr2, &p->len) <= 0))
+		{   
+			p->num_pakcet_recieved += 1;
+            // usleep(10000 * mssg_size[p->i]); // @testing;
+            // stores the icmphdr of the packet we recieved
+            p->icmphd2 = (struct icmphdr *)(p->buff + sizeof(struct ip));
+
+            if ((p->icmphd2->type != 0))
+            {
+				char * ipa;
+				ipa = inet_ntoa(p->addr2.sin_addr);		
+				printf("[dscvr] intermediate node %15s\n",ipa);
+            }
+			else
+            {
+				char * ipa;
+				ipa = inet_ntoa(p->addr2.sin_addr);	
+				printf("[dscvr] final node %15s\n",ipa);
+            }
+        }
+        else{
+			// printf("[dscvr] timeout\n");
+        }
+        sleep(T);
+	}
+	return (0);	
+}
+
+
 /**
  * probes the given hop and tells the delat as well as bandwidth
  *
@@ -148,6 +181,7 @@ int per_hop(tracert *p, int num_probes, int T)
         total_time[idx] = -1.0;
     }
 	p->num_pakcet_recieved = 0;
+	discover_node(p,5,1);
 	while (++(p->i) < num_probes) // number of probes done
 	{
 		p->sbuff = make_message(p->hop, p->ip, p->buffer,mssg_size[p->i]); // sbuf stores the buffer
@@ -173,10 +207,10 @@ int per_hop(tracert *p, int num_probes, int T)
             p->icmphd2 = (struct icmphdr *)(p->buff + sizeof(struct ip));
 
             if ((p->icmphd2->type != 0))
-                {
+            {
                     // printf("type -- %d ",p->icmphd2->type);
                 print_statments(1, p, p->i,num_probes); // print delay
-                }
+            }
             else
             {
                 print_statments(1, p, p->i,num_probes);
