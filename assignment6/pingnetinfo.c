@@ -1,3 +1,4 @@
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -60,6 +61,7 @@ char *dns_lookup(char *URL, struct sockaddr_in *addr);
 unsigned short checksum(char *buffer, int len);
 int	per_hop(tracert *p, int num_probes,int T);
 void *make_message(int hop, char *ip, char *buff,int data_len);
+void init_trace(tracert *trace);
 void print_statments(int type, tracert *p, int n, int num_probes);
 
 double calc_bandwidth(int* mssg_size, double* time, int num){
@@ -200,7 +202,7 @@ int per_hop(tracert *p, int num_probes, int T)
  * @param hop -- ttl
  * @param ip -- destinataion address
  * @param buff -- stores the packet
- * @param data_len -- the 
+ * @param data_len -- the length of data to be appended
 */
 void *make_message(int hop, char *ip, char *buff,int data_len)
 {
@@ -246,6 +248,11 @@ void *make_message(int hop, char *ip, char *buff,int data_len)
 	return (buff);
 }
 
+/**
+ * initialises the struct with appropriate values
+ *
+ * @param trace -- instance of the struct
+*/
 void init_trace(tracert *trace)
 {
 	int	one;
@@ -268,6 +275,14 @@ void init_trace(tracert *trace)
 	setsockopt(trace->sockfd, SOL_SOCKET, SO_RCVTIMEO, (const char *)&trace->tv_out, sizeof(trace->tv_out)); // sets timeout value
 }
 
+/**
+ * prints result of each probe
+ * 
+ * @param type -- 1 if we recieved a packet, 0 if we didn't
+ * @param p -- struct
+ * @param n -- number of probes already sent
+ * @param num_probes -- total number of probes to be sent
+*/
 void print_statments(int type, tracert *p, int n, int num_probes)
 {
 	struct ip *ip;
@@ -301,6 +316,15 @@ void print_statments(int type, tracert *p, int n, int num_probes)
 	}
 }
 
+/**
+ * Main function of the program. It takes a site address as input and finds
+ * the route and estimates the latency and bandwidth of each link in the path.
+ * It uses a combination of ICMP Echo and ICMP Time Exceeded packets to achieve
+ * this. The route discovery and estimation of link latency/bandwidth is done
+ * using the Traceroute and Ping algorithms.
+ *
+ * @return     An integer indicating the exit status of the program.
+ */
 int	main(int argc, char *argv[])
 {
     if (argc < 4)
