@@ -1,3 +1,4 @@
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -52,11 +53,11 @@ typedef struct s_traceroute
 	double total; 
     double bandwidth;
 	int	i; // ith probe
+	int num_pakcet_recieved;
 } t_traceroute;
 
 char *dns_lookup(char *addr_host, struct sockaddr_in *addr_con);
 unsigned short checksum(char *buffer, int nwords);
-void exit_err(char *s);
 int	per_hop(t_traceroute *p, int num_probes,int T);
 void print_results(int type, t_traceroute *p, int n, int num_probes);
 void *create_msg(int hop, char *ip, char *buff,int data_len);
@@ -66,11 +67,6 @@ double calc_bandwidth(int* mssg_size, double* time, int num);
 double calc_bandwidth(int* mssg_size, double* time, int num){
     // write func
     return num;
-}
-void exit_err(char *s)
-{
-	printf("%s", s);
-	exit(1);
 }
 
 char *dns_lookup(char *addr_host, struct sockaddr_in *addr_con)
@@ -83,8 +79,10 @@ char *dns_lookup(char *addr_host, struct sockaddr_in *addr_con)
 	memset(&(hints), 0, sizeof(hints));
 	hints.ai_family = AF_INET;
 	ip = malloc(INET_ADDRSTRLEN);
-	if (getaddrinfo(addr_host, NULL, &hints, &(res)) < 0)
-		exit_err("ft_traceroute: unknown host\n");
+	if (getaddrinfo(addr_host, NULL, &hints, &(res)) < 0){	
+		printf("ft_traceroute: unknown host\n");
+		exit(1);
+	}
 	sa_in = (struct sockaddr_in *)res->ai_addr;
 	inet_ntop(res->ai_family, &(sa_in->sin_addr), ip, INET_ADDRSTRLEN);
 	(*addr_con) = *sa_in;
@@ -125,6 +123,7 @@ int per_hop(t_traceroute *p, int num_probes, int T)
     for (int idx = 0; idx < num_probes; idx++) {
         total_time[idx] = -1.0;
     }
+	p->num_pakcet_recieved = 0;
 	while (++(p->i) < num_probes) // number of probes done
 	{
 		p->sbuff = create_msg(p->hop, p->ip, p->buffer,mssg_size[p->i]); // sbuf stores the buffer
@@ -135,6 +134,7 @@ int per_hop(t_traceroute *p, int num_probes, int T)
         num = sendto(p->sockfd, p->sbuff, sizeof(struct ip) + sizeof(struct icmphdr) + mssg_size[p->i], 0, SA & p->addr, sizeof(p->addr));
 		if (!(recvfrom(p->sockfd, p->buff, sizeof(p->buff), 0, SA & p->addr2, &p->len) <= 0))
 		{   
+			p->num_pakcet_recieved += 1;
             // usleep(10000 * mssg_size[p->i]); // @testing
 			gettimeofday(&p->end, NULL); // store end time at last
             // calculate the time difference
@@ -231,8 +231,11 @@ void init_trace(t_traceroute *trace)
 	trace->buffer = malloc(4146);
 	trace->sockfd = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP); // creates a socket
     trace->bandwidth = -1;
-	if (setsockopt(trace->sockfd, IPPROTO_IP, IP_HDRINCL, val, sizeof(one)) < 0) // tells kernel to use user given ip packet and not add it's own
-		exit_err("error setsockopt\n");
+	trace->num_pakcet_recieved = 0;
+	if (setsockopt(trace->sockfd, IPPROTO_IP, IP_HDRINCL, val, sizeof(one)) < 0){ // tells kernel to use user given ip packet and not add it's own
+		printf("error setsockopt\n");
+		exit(1);
+	}
 	setsockopt(trace->sockfd, SOL_SOCKET, SO_RCVTIMEO, (const char *)&trace->tv_out, sizeof(trace->tv_out)); // sets timeout value
 }
 
@@ -263,20 +266,12 @@ void print_results(int type, t_traceroute *p, int n, int num_probes)
 			printf("%2d      * ", p->hop);
 		else
 			printf("      * ");
-        if(n == num_probes -1){
-            printf("bandwidth\n");
+        if(n == num_probes -1 ){
+			if(p->num_pakcet_recieved!=0)
+            	printf("bandwidth -- %.3f \n", p->bandwidth);
+			else
+				printf("\n");
         }
-	}
-}
-
-void ft_traceroute(t_traceroute *p, int num_probes, int T)
-{
-	while ((!(p->hop == 31))) // sets the max hop value to 30
-	{
-		p->i = -1; // set i to -1 , keeps count of how many packets have been sent till now
-		if (per_hop(p,num_probes,T)) // do perhop, when it returns +1 it means it has reached the final destination
-			break ;
-		p->hop++; // increase the value of ttl
 	}
 }
 
@@ -284,7 +279,7 @@ int	main(int argc, char *argv[])
 {
     if (argc < 4)
     {
-        printf("incomplete arguments\n ");
+        printf("usage: trace_dest num_probes time_between_probes\n ");
         exit(-1);
     }
 
@@ -306,7 +301,13 @@ int	main(int argc, char *argv[])
     if (trace.ip) 
 	{
 		printf("traceroute to %s (%s), 30 hops max\n", trace_dest, trace.ip);
-		ft_traceroute(&trace, num_probes,T); // do traceroute
+		while ((!(trace.hop == 31))) // sets the max hop value to 30
+		{
+			trace.i = -1; // set i to -1 , keeps count of how many packets have been sent till now
+			if (per_hop(&trace,num_probes,T)) // do perhop, when it returns +1 it means it has reached the final destination
+				break ;
+			trace.hop++; // increase the value of ttl
+		}
 		free(trace.buffer); // free memory // need to change
 	}
 	return (0);
