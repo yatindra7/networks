@@ -1,3 +1,7 @@
+/* 
+20CS30052 -- srishty gandhi
+20CS30060 -- yatindra indoria
+*/
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -25,6 +29,7 @@
 # include <sys/socket.h>
 # include <netdb.h>
 # include <sys/time.h>
+# include <float.h>
 
 # define SA (struct sockaddr*)
 # define RECV_TIMEOUT 1
@@ -53,19 +58,37 @@ typedef struct s_traceroute
     double bandwidth;
 	int	i; // ith probe
 	int num_pakcet_recieved;
+	double * prev_rtt;
+	double * curr_rtt;
+	int * prev_recvd_trckr;
+	int * curr_recvd_trckr;
 } tracert;
 
-double calc_bandwidth(int* mssg_size, double* time, int num);
+double calc_bandwidth(int* mssg_size,int* prev_recvd_trckr, int * curr_recvd_trckr, double * prev_rtt, double * curr_rtt, int num);
 char *dns_lookup(char *URL, struct sockaddr_in *addr);
 unsigned short checksum(char *buffer, int len);
 int	per_hop(tracert *p, int num_probes,int T);
 void *make_message(int hop, char *ip, char *buff,int data_len);
-void init_trace(tracert *trace);
+void init_trace(tracert *trace, int num_probes);
 void print_statments(int type, tracert *p, int n, int num_probes);
 
-double calc_bandwidth(int* mssg_size, double* time, int num){
-    // write func
-    return num;
+double calc_bandwidth(int* mssg_size,int* prev_recvd_trckr, int * curr_recvd_trckr, double * prev_rtt, double * curr_rtt, int num){
+    int i;
+	for( i = 0; i< num; i++){
+		if(curr_recvd_trckr[i] == 1)
+			break;
+	}
+	i++;
+	double bd = DBL_MAX;
+	for(int j = i; j<num ;j++){
+		if(curr_recvd_trckr[j] && prev_recvd_trckr[j]){
+			double current = curr_rtt[j] - prev_rtt[j];
+			double zeroth = curr_rtt[i] - prev_rtt[i];
+			double bd2 = (mssg_size[j]- mssg_size[i])/(current-zeroth);
+			bd = (bd2<bd)?bd2:bd;
+		}
+	}
+    return bd;
 }
 
 /**
@@ -124,31 +147,61 @@ unsigned short checksum(char *buffer, int len)
 
 int discover_node(tracert *p, int num_probes, int T)
 {
-    for(int i = 0; i < 5; i++){
+	// first get the ip of next node 
+	// then send 4 more packets to confirm it
+	// if at any point none of them matches return 1 and jump to next hop
+
+	int flag = 0;
+	struct in_addr recv_ip;
+	// ip
+	for(int i = 0; i < 5; i++){
+		p->sbuff = make_message(p->hop, p->ip, p->buffer,0);
+		int num = sendto(p->sockfd, p->sbuff, sizeof(struct ip) + sizeof(struct icmphdr) , 0, SA & p->addr, sizeof(p->addr));
+		if (!(recvfrom(p->sockfd, p->buff, sizeof(p->buff), 0, SA & p->addr2, &p->len) <= 0)){
+			p->icmphd2 = (struct icmphdr *)(p->buff + sizeof(struct ip));
+			// ip = ip;
+			recv_ip = p->addr2.sin_addr;
+			flag = 1;
+			break;
+		}
+	}
+	if(flag == 0){
+		printf("%2d couldn't discover node\n",p->hop);
+		return 1;
+	}
+	
+	// char * ipb;
+	// ipb = inet_ntoa(p->addr2.sin_addr);		
+	// printf("[dscvr] intermediate node %15s\n",ipb);
+    for(int i = 0; i < 4; i++){
 		p->sbuff = make_message(p->hop, p->ip, p->buffer,0);
 		int num = sendto(p->sockfd, p->sbuff, sizeof(struct ip) + sizeof(struct icmphdr) , 0, SA & p->addr, sizeof(p->addr));
 		if (!(recvfrom(p->sockfd, p->buff, sizeof(p->buff), 0, SA & p->addr2, &p->len) <= 0))
 		{   
-			p->num_pakcet_recieved += 1;
+			// p->num_pakcet_recieved += 1;
             // usleep(10000 * mssg_size[p->i]); // @testing;
             // stores the icmphdr of the packet we recieved
             p->icmphd2 = (struct icmphdr *)(p->buff + sizeof(struct ip));
-
+			// if(ip != ip){
+			if(recv_ip.s_addr != p->addr2.sin_addr.s_addr){				printf("ip didn't match\n");
+				return 1;
+			}
             if ((p->icmphd2->type != 0))
             {
 				char * ipa;
 				ipa = inet_ntoa(p->addr2.sin_addr);		
-				printf("[dscvr] intermediate node %15s\n",ipa);
+				// printf("[dscvr] intermediate node %15s\n",ipa);
             }
 			else
             {
 				char * ipa;
 				ipa = inet_ntoa(p->addr2.sin_addr);	
-				printf("[dscvr] final node %15s\n",ipa);
+				// printf("[dscvr] final node %15s\n",ipa);
             }
         }
         else{
-			// printf("[dscvr] timeout\n");
+			printf("[dscvr] timeout\n");
+			return 1;
         }
         sleep(T);
 	}
@@ -171,17 +224,29 @@ int per_hop(tracert *p, int num_probes, int T)
 
     int * mssg_size;
     mssg_size = (int*)malloc(sizeof(int)*num_probes);
-    double * total_time;
-    total_time = (double *) malloc(sizeof(double) * num_probes);
+    // double * total_time;
+    // total_time = (double *) malloc(sizeof(double) * num_probes);
+
     // initialise both of them
     for(int idx = 0; idx < num_probes; idx++){
         mssg_size[idx] = (idx%5)*10;
     }
-    for (int idx = 0; idx < num_probes; idx++) {
-        total_time[idx] = -1.0;
-    }
+    // for (int idx = 0; idx < num_probes; idx++) {
+    //     recv_tracker[idx] = -1.0;
+    // }
+	for(int idx  =0; idx <num_probes; idx++){
+		p->prev_recvd_trckr[idx] = p->curr_recvd_trckr[idx];
+		p->prev_rtt[idx] = p->curr_rtt[idx];
+		p->curr_recvd_trckr[idx] = 0;
+		p->curr_rtt[idx] = 0.0;
+	}
 	p->num_pakcet_recieved = 0;
-	discover_node(p,5,1);
+	int node_discovered;
+	node_discovered = discover_node(p,5,1);
+	if(node_discovered == 1){
+		// couldn't find the node
+		return 0;
+	}
 	while (++(p->i) < num_probes) // number of probes done
 	{
 		p->sbuff = make_message(p->hop, p->ip, p->buffer,mssg_size[p->i]); // sbuf stores the buffer
@@ -193,23 +258,28 @@ int per_hop(tracert *p, int num_probes, int T)
 		if (!(recvfrom(p->sockfd, p->buff, sizeof(p->buff), 0, SA & p->addr2, &p->len) <= 0))
 		{   
 			p->num_pakcet_recieved += 1;
+			p->curr_recvd_trckr[p->i] = 1;
             // usleep(10000 * mssg_size[p->i]); // @testing
 			gettimeofday(&p->end, NULL); // store end time at last
             // calculate the time difference
-            double a = (double)((p->end.tv_usec - p->start.tv_usec) / 1000.0);
+            double a = (double)((p->end.tv_usec - p->start.tv_usec) );
             if(a < 0){
-                a += 1000;
-            }
-			p->total = a;
-            total_time[p->i] = a;
-            p->bandwidth = calc_bandwidth(mssg_size,total_time,p->i);
+                a += 1000000;
+            } 
+            p->curr_rtt[p->i] = a; // store the difference and pass it to bandwidth
+			p->total = p->curr_rtt[p->i] -  p->prev_rtt[p->i];
+			p->curr_recvd_trckr[p->i] = 1;
+            p->bandwidth = calc_bandwidth(mssg_size,p->prev_recvd_trckr,p->curr_recvd_trckr, p->prev_rtt, p->curr_rtt,p->i);
             // stores the icmphdr of the packet we recieved
             p->icmphd2 = (struct icmphdr *)(p->buff + sizeof(struct ip));
 
             if ((p->icmphd2->type != 0))
             {
                     // printf("type -- %d ",p->icmphd2->type);
-                print_statments(1, p, p->i,num_probes); // print delay
+				if(p->prev_recvd_trckr[p->i] == 0)
+					print_statments(2, p, p->i, num_probes);
+				else
+                	print_statments(1, p, p->i,num_probes); // print delay
             }
             else
             {
@@ -225,7 +295,7 @@ int per_hop(tracert *p, int num_probes, int T)
         }
         sleep(T);
 	}
-    free(total_time);
+    // free(total_time);
     free(mssg_size);
 	return (0);
 }
@@ -287,7 +357,7 @@ void *make_message(int hop, char *ip, char *buff,int data_len)
  *
  * @param trace -- instance of the struct
 */
-void init_trace(tracert *trace)
+void init_trace(tracert *trace,int num_probes)
 {
 	int	one;
 	int	*val;
@@ -302,6 +372,16 @@ void init_trace(tracert *trace)
 	trace->sockfd = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP); // creates a socket
     trace->bandwidth = -1;
 	trace->num_pakcet_recieved = 0;
+	trace->prev_rtt = (double *)malloc(sizeof(double) * num_probes);
+	trace->prev_recvd_trckr = (int*)malloc(sizeof(int) * num_probes);
+	trace->curr_recvd_trckr = (int*)malloc(sizeof(int) * num_probes);
+	trace->curr_rtt = (double *)malloc(sizeof(double) * num_probes);
+	for(int i = 0; i<num_probes; i++){
+		trace->prev_recvd_trckr[i] = 1;
+		trace->prev_rtt[i] = 0.0;
+		trace->curr_recvd_trckr[i] = 1;
+		trace->curr_rtt[i] = 0.0;
+	}
 	if (setsockopt(trace->sockfd, IPPROTO_IP, IP_HDRINCL, val, sizeof(one)) < 0){ // tells kernel to use user given ip packet and not add it's own
 		printf("error setsockopt\n");
 		exit(1);
@@ -327,12 +407,12 @@ void print_statments(int type, tracert *p, int n, int num_probes)
 	{
 		if (n == 0)
 		{
-			printf("%2d  %15s %.3f ms ", p->hop,ipa, p->total);
+			printf("%2d  %15s %.0f us ", p->hop,ipa, p->total);
 		}
 		else
-			printf("%.3f ms ", p->total);
+			printf("%.0f us ", p->total);
         if(n == num_probes -1){
-            printf("bandwidth -- %.3f \n", p->bandwidth);
+            printf("bandwidth -- %.3f MB\n", p->bandwidth);
         }
 	}
 	else
@@ -343,7 +423,7 @@ void print_statments(int type, tracert *p, int n, int num_probes)
 			printf("      * ");
         if(n == num_probes -1 ){
 			if(p->num_pakcet_recieved!=0)
-            	printf("bandwidth -- %.3f \n", p->bandwidth);
+            	printf("bandwidth -- %.3f MB\n", p->bandwidth);
 			else
 				printf("\n");
         }
@@ -380,7 +460,7 @@ int	main(int argc, char *argv[])
     }
 	tracert trace; // stores info about the trace
 
-	init_trace(&trace); // initialises values of the trace
+	init_trace(&trace,num_probes); // initialises values of the trace
 	trace.ip = dns_lookup(trace_dest, &trace.addr); // dns lookup
     if (trace.ip) 
 	{
